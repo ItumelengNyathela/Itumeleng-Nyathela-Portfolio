@@ -1,0 +1,60 @@
+/* Core Layout Styles */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f8f9fa; 
+    color: #333; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.hero { background: #0078d4; color: white; padding: 80px 0; border-bottom: 5px solid #005a9e; }
+.card { border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: 0.3s; }
+.card:hover { transform: translateY(-5px); }
+.skill-badge { background: #e9ecef; padding: 8px 15px; border-radius: 20px; display: inline-block; margin: 5px; font-weight: 500; font-size: 0.9rem; }
+.section-title { border-left: 5px solid #0078d4; padding-left: 15px; margin-bottom: 30px; }
+footer { background: #212529; color: white; padding: 40px 0; }
+
+/* Dark Mode Overrides */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #333;
+}
+body.dark-mode .bg-white {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+body.dark-mode .skill-badge {
+    background: #333;
+    color: #0078d4;
+}
+body.dark-mode .text-muted {
+    color: #aaa !important;
+}
+
+/* Custom Animations for Tailwind */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* Dark Mode Logic for Tailwind */
+html.dark body {
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+.dark .bg-white { background-color: #1e293b !important; }
+.dark .text-slate-600 { color: #94a3b8 !important; }
+.dark .border-slate-200 { border-color: #334155 !important; }
