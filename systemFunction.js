@@ -1,19 +1,28 @@
-// Dark Mode Toggle
-const toggle = document.getElementById('darkModeToggle');
-const html = document.documentElement;
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById('darkModeToggle');
+    const html = document.documentElement;
 
-// Simple Dark Mode for Tailwind
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    html.classList.add('dark');
-} else {
-    html.classList.remove('dark');
-}
+    // Load theme
+    const savedTheme = localStorage.getItem('theme');
 
-toggle.addEventListener('click', () => {
-    html.classList.toggle('dark');
-    if (html.classList.contains('dark')) {
-        localStorage.theme = 'dark';
+    if (savedTheme === 'dark') {
+        html.classList.add('dark');
+    } else if (savedTheme === 'light') {
+        html.classList.remove('dark');
     } else {
-        localStorage.theme = 'light';
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            html.classList.add('dark');
+        }
     }
+
+    // Toggle click
+    toggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+
+        if (html.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
 });

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itumeleng Ethan Nyathela | Systems Developer</title>
     
+    <script>tailwind.config = { darkMode: 'class'}</script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -29,6 +30,7 @@
                 <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
             </div>
 
+            <!-- Button to change between light and dark mode, with a moon icon for light mode and a sun icon for dark mode. The button has a background color that changes based on the theme, and it has a hover effect that adds a ring around it. The icons also change based on the theme, with the moon icon hidden in dark mode and the sun icon hidden in light mode. -->
             <button id="darkModeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:ring-2 ring-blue-400 transition">
                 <i class="fas fa-moon dark:hidden"></i>
                 <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
@@ -36,6 +38,7 @@
         </div>
     </nav>
 
+    <!-- Opening statement section with a large heading, a subheading, and a call-to-action button. The section has a background image that is blurred and has a gradient overlay. The heading and subheading have a fade-in animation, and the call-to-action button has a bounce animation. The section also includes an image of the developer, which has a rotate animation on hover. There are also two badges that indicate the developer's expertise in Windows and macOS development, which have a bounce animation. -->
     <section class="pt-32 pb-20 px-4">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1" data-aos="fade-right">
@@ -49,7 +52,7 @@
                 </p>
                 <div class="flex gap-4">
                     <a href="#contact" class="px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200">Work With Me</a>
-                    <a href="https://linkedin.com" class="px-8 py-3 bg-white border border-slate-200 rounded-xl font-semibold hover:bg-slate-50 transition">View LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/itumeleng-nyathela-90363b192/" target="_blank" rel="noopener noreferre" class="px-8 py-3 bg-white border border-slate-200 rounded-xl font-semibold hover:bg-slate-50 transition">View LinkedIn</a>
                 </div>
             </div>
             <div class="flex-1 relative" data-aos="zoom-in">
@@ -70,6 +73,7 @@
         </div>
     </section>
 
+    <!-- Experience section with two cards, each representing a different job role. Each card has a title, company name, duration, and a list of responsibilities. The cards have a hover effect that adds a shadow and slightly scales them up. The first card has a fade-up animation, while the second card has a fade-up animation with a delay. The section also has a background color that changes based on the theme. -->
     <section id="experience" class="py-20 bg-slate-100/50 dark:bg-slate-800/20">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Professional Journey</h2>
@@ -102,10 +106,12 @@
         </div>
     </section>
 
+        <!-- Certifications section with a grid of cards, each representing a different certification. Each card has an image, title, and issuing organization. The cards have a hover effect that scales up the image and adds a gradient overlay with the certification details. The first card has a flip-left animation, while the second card has a flip-left animation with a delay. The section also has padding and a background color that changes based on the theme. -->
     <section class="py-20 px-4">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold mb-12 text-center">Certifications</h2>
             <div class="grid md:grid-cols-3 gap-6">
+                
                 <div class="group relative rounded-2xl overflow-hidden shadow-lg" data-aos="flip-left">
                     <img src="cert-azure.jpg" alt="Azure Cert" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
@@ -113,7 +119,23 @@
                         <p class="text-slate-300 text-xs">Afrika Tikkun Services</p>
                     </div>
                 </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg" data-aos="flip-left" data-aos-delay="200">
+                    <img src="cert-net.jpg" alt="NET Cert" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+                        <h4 class="text-white font-bold">.NET Fundamentals</h4>
+                        <p class="text-slate-300 text-xs">Afrika Tikkun Services</p>
+                    </div>
                 </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg" data-aos="flip-left" data-aos-delay="200">
+                    <img src="cert-net.jpg" alt="NET Cert" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+                        <h4 class="text-white font-bold">.NET Fundamentals</h4>
+                        <p class="text-slate-300 text-xs">Afrika Tikkun Services</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -127,9 +149,12 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="systemFuction.js"></script>
+    <script src="systemFunction.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
+        if (localStorage.theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
     </script>
 </body>
 </html>
