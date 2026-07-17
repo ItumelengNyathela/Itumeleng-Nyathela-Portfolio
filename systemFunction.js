@@ -40,12 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const errorPopup = document.getElementById("errorPopup");
     const errorCard = document.getElementById("errorCard");
     const closeErrorPopup = document.getElementById("closeErrorPopup");
+    
 
     if (!form) return;
 
     // Submit Form
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
+        const captchaResponse = grecaptcha.getResponse();
+
+        if (!captchaResponse) {
+            alert("Please complete the security check.");
+            return;
+        }
         const button = form.querySelector("button");
         button.disabled = true;
         button.innerHTML = `
@@ -72,6 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
         try {
+            const captchaResponse = grecaptcha.getResponse();
+
             await emailjs.send(
                 "service_hrudo3i",
                 "template_azp0inm",
@@ -79,7 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: document.getElementById("name").value,
                     email: document.getElementById("email").value,
                     subject: document.getElementById("subject").value,
-                    message: document.getElementById("message").value
+                    message: document.getElementById("message").value,
+                    "g-recaptcha-response": captchaResponse
                 }
             );
             // Show success popup
@@ -90,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.classList.add("scale-100", "opacity-100");
             }, 30);
             form.reset();
+            grecaptcha.reset();
         } catch (error) {
             console.error("EmailJS Error:", error);
 
@@ -144,7 +155,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+function onRecaptchaSuccess(token) {
+        console.log("Captcha verified");
+    }
 
+// Script for mobile menu toggle
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menuToggle");
     const menuIcon = document.getElementById("menuIcon");

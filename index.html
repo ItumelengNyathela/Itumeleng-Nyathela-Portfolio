@@ -25,15 +25,44 @@
         <div class="w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl border-b border-slate-200 dark:border-slate-800 rounded-b-3xl shadow-xl">
             <div class="max-w-7xl mx-auto px-8 h-20 relative flex items-center justify-between">
                 <!-- Logo -->
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2 md:gap-3">
+    
                     <a href="#"
-                    class="text-3xl font-black bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-600 bg-clip-text text-transparent">
+                        class="text-2xl md:text-3xl font-black
+                        bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-600
+                        bg-clip-text text-transparent">
                         IEN.DEV
                     </a>
-                    <span class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 text-xs font-semibold">
-                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        Available
-                    </span>
+                    <!-- Availability Badge -->
+                    <div class="group relative">
+                        <div
+                            class="flex items-center gap-2
+                            px-2.5 py-1 md:px-3 md:py-1.5
+                            rounded-full
+                            border border-green-500/20
+                            bg-green-500/10
+                            backdrop-blur-xl
+                            hover:bg-green-500/20
+                            transition-all duration-300">
+                            <!-- Pulsing Dot -->
+                            <span class="relative flex h-2.5 w-2.5">
+                                <span
+                                    class="absolute inline-flex h-full w-full rounded-full bg-green-400 animate-ping opacity-75">
+                                </span>
+                                <span
+                                    class="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500">
+                                </span>
+                            </span>
+                            <!-- Mobile -->
+                            <span class="text-[10px] font-semibold text-green-500 md:hidden">
+                                Available
+                            </span>
+                            <!-- Desktop -->
+                            <span class="hidden md:block text-xs font-semibold text-green-500">
+                                Open to Opportunities
+                            </span>
+                        </div>
+                    </div>
                 </div>
                 <!-- Navigation -->
                 <!-- Centered Navigation -->
@@ -77,8 +106,7 @@
                             hover:bg-white dark:hover:bg-slate-700
                             hover:shadow-lg
                             transition-all duration-300">
-                        <i class="fas fa-bars text-slate-700 dark:text-white
-                                group-hover:scale-110 transition"></i>
+                        <i id="menuIcon" class="fas fa-bars text-slate-700 dark:text-white group-hover:scale-110 transition"></i>
                     </button>
                 </div>
                 
@@ -138,7 +166,6 @@
     <section class="pt-32 pb-20 px-4">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1" data-aos="fade-right">
-                <span class="px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-4 inline-block">Available for New Opportunities</span>
                 <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
                     Full-Stack <span class="text-blue-600">Software Developer</span> 
                 </h1>
@@ -147,6 +174,9 @@
                     Systems Developer with experience building and maintaining web applications, enterprise systems, and digital platforms. 
                     Skilled in C#, ASP.NET, SQL Server, JavaScript, and cloud technologies, with a passion for delivering reliable software solutions that create real-world impact.
                 </p>
+
+                
+
                 <div class="flex justify-center md:justify-start gap-3">
                     <a href="#contact"
                         class="px-5 py-2.5 md:px-8 md:py-3
@@ -172,21 +202,21 @@
                     </a>
                 </div>
             </div>
-            <div class="flex-1 relative" data-aos="zoom-in">
+            <div class="flex-1 relative py-16 px-12" data-aos="zoom-in">
                 <!-- HTML -->
-                <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
                     <i class="fab fa-html5 text-lg md:text-2xl text-orange-500"></i>
                     <span class="text-xs md:text-base font-bold text-slate-800 dark:text-white">HTML</span>
                 </div>
 
                 <!-- SQL Server -->
-                <div class="absolute top-1/8 -left-4 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
+                <div class="absolute top-20 -left-6 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
                     <i class="fas fa-database text-lg md:text-2xl text-red-600"></i>
                     <span class="text-xs md:text-base font-bold text-slate-800 dark:text-white">SQL Server</span>
                 </div>
 
                 <!-- CSS -->
-                <div class="absolute top-1/2 -left-8 -translate-y-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
+                <div class="absolute top-1/2 -left-0 -translate-y-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
                     <i class="fab fa-css3-alt text-lg md:text-2xl text-blue-500"></i>
                     <span class="text-xs md:text-base font-bold text-slate-800 dark:text-white">CSS</span>
                 </div>
@@ -197,13 +227,13 @@
                 </div>
 
                 <!-- JavaScript -->
-                <div class="absolute top-1/2 -right-8 -translate-y-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
+                <div class="absolute top-1/2 -right-0 -translate-y-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
                     <i class="fab fa-js text-lg md:text-2xl text-yellow-400"></i>
                     <span class="text-xs md:text-base font-bold text-slate-800 dark:text-white">JavaScript</span>
                 </div>
 
                 <!-- C# -->
-                <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
                     <i class="fas fa-code text-lg md:text-2xl text-purple-600"></i>
                     <span class="text-xs md:text-base font-bold text-slate-800 dark:text-white">C#</span>
                 </div>
@@ -223,8 +253,10 @@
                                 Systems Developer
                             </h3>
                             <p class="text-slate-300 font-semibold">
-                                Centre for Public Service Innovation
-                                <span class="text-blue-600">CPSI</span>
+                                Centre for Public Service Innovation 
+                            </p>
+                            <p class="text-blue-600 font-semibold">
+                                CPSI
                             </p>
                             <p class="text-slate-400 text-sm mt-3">
                                 <i class="fas fa-map-marker-alt mr-2"></i>
@@ -471,29 +503,52 @@
                             <input id="name"
                                 type="text"
                                 placeholder="Your Name"
-                                class="w-full px-5 py-4 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-transparent focus:border-blue-500 focus:outline-none">
+                                class="w-full px-5 py-4 rounded-2xl
+                                        bg-white text-slate-900
+                                        dark:bg-slate-800 dark:text-white
+                                        border border-slate-200 dark:border-slate-700
+                                        focus:border-blue-500 focus:outline-none">
                             <input id="email"
                                 type="email"
                                 placeholder="Email Address"
-                                class="w-full px-5 py-4 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-transparent focus:border-blue-500 focus:outline-none">
+                                class="w-full px-5 py-4 rounded-2xl
+                                        bg-white text-slate-900
+                                        dark:bg-slate-800 dark:text-white
+                                        border border-slate-200 dark:border-slate-700
+                                        focus:border-blue-500 focus:outline-none">
                         </div>
                         <input id="subject"
                             type="text"
-                            placeholder="Project Subject"
-                            class="w-full px-5 py-4 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-transparent focus:border-blue-500 focus:outline-none">
+                            placeholder="Subject"
+                            class="w-full px-5 py-4 rounded-2xl
+                                    bg-white text-slate-900
+                                    dark:bg-slate-800 dark:text-white
+                                    border border-slate-200 dark:border-slate-700
+                                    focus:border-blue-500 focus:outline-none">
                         <textarea id="message"
                             rows="6"
-                            placeholder="Tell me about your project..."
-                            class="w-full px-5 py-4 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-transparent focus:border-blue-500 focus:outline-none resize-none"></textarea>
+                            placeholder="Write your message here..."
+                            class="w-full px-5 py-4 rounded-2xl
+                                    bg-white text-slate-900
+                                    dark:bg-slate-800 dark:text-white
+                                    border border-slate-200 dark:border-slate-700
+                                    focus:border-blue-500 focus:outline-none resize-none">
+                        </textarea>
                         <!-- reCAPTCHA Container -->
                         <div class="rounded-2xl border border-slate-200 dark:border-slate-700 
                                     bg-slate-50 dark:bg-slate-800/50 p-4">
-                            
+
                             <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">
                                 Quick security check
                             </p>
+                            
+                            <div class="flex justify-center">
+                                <div class="g-recaptcha"
+                                    data-sitekey="6LfPIFctAAAAAFybNzIMuv1n4_xTua9VDlkXydf2"
+                                    data-callback="onRecaptchaSuccess">
+                                </div>
+                            </div>
 
-                            <div class="g-recaptcha" data-sitekey="6LfPIFctAAAAAFybNzIMuv1n4_xTua9VDlkXydf2"></div>
                         </div>
                             <button
                             type="submit"
@@ -575,7 +630,7 @@
                     © <span id="currentYear"></span> Itumeleng Ethan Nyathela. 
                     <br>Powered by coffee, Stack Overflow, and Ctrl+C Ctrl+V.
                 </p>
-                <div class="flex flex-wrap justify-center items-center gap-2 text-sm text-slate-500 text-center md:text-left">
+                <div class="flex flex-wrap justify-center items-center gap-2 text-sm text-slate-500">
                     <span>Built with</span>
                     <span class="text-blue-400">ASP.NET</span>
                     <span>•</span>
@@ -590,20 +645,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<form id="contactForm">
-    
-    <!-- your fields -->
-
-    <div class="g-recaptcha"
-         data-sitekey="YOUR_SITE_KEY">
-    </div>
-
-    <button type="submit">
-        Send Message
-    </button>
-
-</form>
     <script src="systemFunction.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
