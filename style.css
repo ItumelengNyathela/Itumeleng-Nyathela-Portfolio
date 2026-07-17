@@ -12,28 +12,6 @@ body {
 .section-title { border-left: 5px solid #0078d4; padding-left: 15px; margin-bottom: 30px; }
 footer { background: #212529; color: white; padding: 40px 0; }
 
-/* Dark Mode Overrides
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-body.dark-mode .card {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    border: 1px solid #333;
-}
-body.dark-mode .bg-white {
-    background-color: #1e1e1e !important;
-    color: #e0e0e0 !important;
-}
-body.dark-mode .skill-badge {
-    background: #333;
-    color: #0078d4;
-}
-body.dark-mode .text-muted {
-    color: #aaa !important;
-} */
-
 /* Custom Animations for Tailwind */
 @keyframes blob {
     0% { transform: translate(0px, 0px) scale(1); }
@@ -58,3 +36,21 @@ html.dark body {
 .dark .bg-white { background-color: #1e293b !important; }
 .dark .text-slate-600 { color: #94a3b8 !important; }
 .dark .border-slate-200 { border-color: #334155 !important; }
+
+
+/* Scrollbar Width */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(15,23,42,0.6);
+    backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(59,130,246,0.6);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}

@@ -1,3 +1,4 @@
+// Script for dark mode toggle
 document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.getElementById('darkModeToggle');
     const html = document.documentElement;
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+// Script for contact form submission using EmailJS
 document.addEventListener("DOMContentLoaded", () => {
 
     emailjs.init("ahQEPQjGJSR0wItnz");
@@ -133,4 +134,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 }
+});
+
+// Script to dynamically update the current year in the footer
+document.addEventListener("DOMContentLoaded", () => {
+    const yearElement = document.getElementById("currentYear");
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 });

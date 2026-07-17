@@ -43,7 +43,7 @@
                 <!-- Navigation -->
                 <!-- Centered Navigation -->
                 <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 p-2 rounded-full bg-slate-100/70 dark:bg-slate-800/70">
-                    <a href="#about"
+                    <a href="#"
                     class="px-5 py-2 rounded-full hover:bg-blue-600 hover:text-white hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
                         About
                     </a>
@@ -375,7 +375,7 @@
                                     GitHub
                                 </p>
                         </a>
-                        <a href="https://www.linkedin.com/in/itumeleng-nyathela-41b0b021a/"
+                        <a href="https://www.linkedin.com/in/itumeleng-nyathela-90363b192/"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="p-4 bg-white dark:bg-slate-900 rounded-2xl text-center border border-slate-200 dark:border-slate-800 hover:scale-105 transition">
@@ -417,13 +417,84 @@
         </div>
     </section>
 
-    <footer id="contact" class="py-12 bg-slate-900 text-white text-center">
-        <p class="mb-4">itumelengnyathela16@gmail.com</p>
-        <div class="flex justify-center gap-6 mb-8 text-2xl">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+    <footer class="relative overflow-hidden bg-slate-950 text-white">
+        <!-- Background Glow Effects -->
+        <div class="absolute top-0 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        <div class="relative max-w-7xl mx-auto px-6 py-20">
+            <!-- Top Section -->
+            <div class="grid md:grid-cols-3 gap-12 items-start">
+                <!-- Brand -->
+                <div>
+                    <h2 class="text-4xl font-black bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-600 bg-clip-text text-transparent mb-4">
+                        IEN.DEV
+                    </h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        Systems Developer passionate about building modern web
+                        applications, enterprise systems, and digital experiences
+                        that create real-world impact.
+                    </p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-5">
+                        Navigation
+                    </h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-slate-400 hover:text-blue-400 transition">
+                            About
+                        </a>
+                        <a href="#experience" class="block text-slate-400 hover:text-blue-400 transition">
+                            Experience
+                        </a>
+                        <a href="#projects" class="block text-slate-400 hover:text-blue-400 transition">
+                            Projects
+                        </a>
+                        <a href="#contact" class="block text-slate-400 hover:text-blue-400 transition">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-bold text-lg mb-5">
+                        Let's Connect
+                    </h3>
+                    <p class="text-slate-400 mb-6">
+                        itumelengnyathela16@gmail.com
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/ItumelengNyathela"
+                        target="_blank"
+                        class="w-14 h-14 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:scale-110 transition-all duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/itumeleng-nyathela-90363b192/"
+                        target="_blank"
+                        class="w-14 h-14 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:scale-110 transition-all duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Divider -->
+            <div class="h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent my-12"></div>
+            <!-- Bottom -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-slate-500 text-sm text-center">
+                    © <span id="currentYear"></span> Itumeleng Ethan Nyathela. 
+                    <br>Powered by coffee, Stack Overflow, and Ctrl+C Ctrl+V.
+                </p>
+                <div class="flex items-center gap-2 text-sm text-slate-500">
+                    <span>Built with</span>
+                    <span class="text-blue-400">ASP.NET</span>
+                    <span>•</span>
+                    <span class="text-cyan-400">Tailwind CSS</span>
+                    <span>•</span>
+                    <span class="text-purple-400">JavaScript</span>
+                </div>
+            </div>
         </div>
-        <p class="text-slate-500 text-sm">&copy; 2026 Built with .NET 10 & Tailwind</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
