@@ -28,7 +28,7 @@
                     border-b border-slate-200 dark:border-slate-800
                     rounded-b-3xl
                     shadow-xl">
-            <div class="max-w-7xl mx-auto px-8 h-24 relative flex items-center justify-between">
+            <div class="max-w-7xl mx-auto px-8 h-20 relative flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center gap-3">
                     <a href="#"
@@ -61,16 +61,90 @@
                     </a>
                 </div>
                 <!-- Actions -->
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2">
+                    <!-- Dark Mode -->
                     <button id="darkModeToggle"
-                        class="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:scale-110 transition">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                        class="group flex items-center justify-center
+                            w-11 h-11
+                            rounded-xl
+                            bg-slate-100/80 dark:bg-slate-800/80
+                            border border-slate-200 dark:border-slate-700
+                            backdrop-blur-xl
+                            hover:bg-white dark:hover:bg-slate-700
+                            hover:shadow-lg
+                            transition-all duration-300">
+                        <i class="fas fa-moon text-slate-700 dark:hidden
+                                group-hover:rotate-12 transition"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400
+                                group-hover:rotate-180 transition duration-500"></i>
+                    </button>
+                    <!-- Mobile Menu -->
+                    <button id="menuToggle"
+                        class="group md:hidden flex items-center justify-center
+                            w-11 h-11
+                            rounded-xl
+                            bg-slate-100/80 dark:bg-slate-800/80
+                            border border-slate-200 dark:border-slate-700
+                            backdrop-blur-xl
+                            hover:bg-white dark:hover:bg-slate-700
+                            hover:shadow-lg
+                            transition-all duration-300">
+                        <i class="fas fa-bars text-slate-700 dark:text-white
+                                group-hover:scale-110 transition"></i>
                     </button>
                 </div>
+                
             </div>
         </div>
     </nav>
+
+    <div id="mobileMenu"
+        class="fixed top-24 left-4 right-4 z-40 hidden">
+        <div
+            class="relative
+            bg-white/95 dark:bg-slate-900/95
+            backdrop-blur-2xl
+            border border-slate-200 dark:border-slate-700
+            rounded-3xl
+            shadow-2xl
+            overflow-hidden">
+            <!-- Gradient Glow Layer -->
+            <div
+                class="absolute inset-0
+                bg-gradient-to-br
+                from-blue-500/5
+                via-cyan-500/5
+                to-purple-500/5">
+            </div>
+            <!-- Menu Links -->
+            <div class="relative z-10">
+                <a href="#"
+                class="mobile-link flex items-center gap-3 mx-2 my-2 px-6 py-4 rounded-2xl text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+                    <i class="fas fa-user"></i>
+                    About
+                </a>
+                <a href="#experience"
+                class="mobile-link flex items-center gap-3 mx-2 my-2 px-6 py-4 rounded-2xl text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+                    <i class="fas fa-briefcase"></i>
+                    Experience
+                </a>
+                <a href="#projects"
+                class="mobile-link flex items-center gap-3 mx-2 my-2 px-6 py-4 rounded-2xl text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+                    <i class="fas fa-code"></i>
+                    Projects
+                </a>
+                <a href="#contact"
+                class="mobile-link flex items-center gap-3 mx-2 my-2 px-6 py-4 rounded-2xl text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
+            </div>
+        </div>
+    </div>
+    <div
+        id="menuOverlay"
+        class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-30">
+    </div>
 
     <!-- Opening statement section with a large heading, a subheading, and a call-to-action button. The section has a background image that is blurred and has a gradient overlay. The heading and subheading have a fade-in animation, and the call-to-action button has a bounce animation. The section also includes an image of the developer, which has a rotate animation on hover. There are also two badges that indicate the developer's expertise in Windows and macOS development, which have a bounce animation. -->
     <section class="pt-32 pb-20 px-4">
@@ -85,48 +159,66 @@
                     Systems Developer with experience building and maintaining web applications, enterprise systems, and digital platforms. 
                     Skilled in C#, ASP.NET, SQL Server, JavaScript, and cloud technologies, with a passion for delivering reliable software solutions that create real-world impact.
                 </p>
-                <div class="flex gap-4">
-                    <a href="#contact" class="px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200">Work With Me</a>
-                    <a href="https://www.linkedin.com/in/itumeleng-nyathela-90363b192/" target="_blank" rel="noopener noreferre" class="px-8 py-3 bg-white border border-slate-200 rounded-xl font-semibold hover:bg-slate-50 transition">View LinkedIn</a>
+                <div class="flex gap-3">
+                    <a href="#contact"
+                        class="px-5 py-2.5 md:px-8 md:py-3
+                            text-sm md:text-base
+                            bg-blue-600 text-white
+                            rounded-xl font-semibold
+                            hover:bg-blue-700
+                            transition shadow-lg shadow-blue-200">
+                        Work With Me
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/itumeleng-nyathela-90363b192/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="px-5 py-2.5 md:px-8 md:py-3
+                            text-sm md:text-base
+                            bg-white
+                            border border-slate-200
+                            rounded-xl font-semibold
+                            hover:bg-slate-50
+                            transition">
+                        View LinkedIn
+                    </a>
                 </div>
             </div>
             <div class="flex-1 relative" data-aos="zoom-in">
                 <!-- HTML -->
                 <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
-                    <i class="fab fa-html5 text-2xl text-orange-500"></i>
-                    <span class="font-bold text-slate-800 dark:text-white">HTML</span>
+                    <i class="fab fa-html5 text-lg md:text-2xl text-orange-500"></i>
+                    <span class="text-xs md:text-base font-bold text-slate-800 dark:text-white">HTML</span>
                 </div>
 
                 <!-- SQL Server -->
                 <div class="absolute top-1/8 -left-4 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
-                    <i class="fas fa-database text-2xl text-red-600"></i>
-                    <span class="font-bold text-slate-800 dark:text-white">SQL Server</span>
+                    <i class="fas fa-database text-lg md:text-2xl text-red-600"></i>
+                    <span class="text-xs md:text-base font-bold text-slate-800 dark:text-white">SQL Server</span>
                 </div>
 
                 <!-- CSS -->
                 <div class="absolute top-1/2 -left-8 -translate-y-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
-                    <i class="fab fa-css3-alt text-2xl text-blue-500"></i>
-                    <span class="font-bold text-slate-800 dark:text-white">CSS</span>
+                    <i class="fab fa-css3-alt text-lg md:text-2xl text-blue-500"></i>
+                    <span class="text-xs md:text-base font-bold text-slate-800 dark:text-white">CSS</span>
                 </div>
 
                 <!-- Main Image -->
-                <div class="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-3xl overflow-hidden rotate-3 hover:rotate-0 transition duration-500 shadow-2xl ring-4 ring-white">
+                <div class="w-72 h-96 md:w-80 md:h-80 mx-auto rounded-3xl overflow-hidden rotate-3 hover:rotate-0 transition duration-500 shadow-2xl ring-4 ring-white">
                     <img src="Images/IMG_13745.png" alt="Itumeleng Ethan Nyathela" class="w-full h-full object-cover">
                 </div>
 
                 <!-- JavaScript -->
                 <div class="absolute top-1/2 -right-8 -translate-y-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
-                    <i class="fab fa-js text-2xl text-yellow-400"></i>
-                    <span class="font-bold text-slate-800 dark:text-white">JavaScript</span>
+                    <i class="fab fa-js text-lg md:text-2xl text-yellow-400"></i>
+                    <span class="text-xs md:text-base font-bold text-slate-800 dark:text-white">JavaScript</span>
                 </div>
 
                 <!-- C# -->
                 <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce z-10">
-                    <i class="fas fa-code text-2xl text-purple-600"></i>
-                    <span class="font-bold text-slate-800 dark:text-white">C#</span>
+                    <i class="fas fa-code text-lg md:text-2xl text-purple-600"></i>
+                    <span class="text-xs md:text-base font-bold text-slate-800 dark:text-white">C#</span>
                 </div>
-                
-
             </div>
         </div>
     </section>
@@ -425,7 +517,7 @@
             <!-- Top Section -->
             <div class="grid md:grid-cols-3 gap-12 items-start">
                 <!-- Brand -->
-                <div>
+                <div class="text-center md:text-left">
                     <h2 class="text-4xl font-black bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-600 bg-clip-text text-transparent mb-4">
                         IEN.DEV
                     </h2>
@@ -436,7 +528,7 @@
                     </p>
                 </div>
                 <!-- Quick Links -->
-                <div>
+                <div class="text-center md:text-left">
                     <h3 class="font-bold text-lg mb-5">
                         Navigation
                     </h3>
@@ -456,14 +548,14 @@
                     </div>
                 </div>
                 <!-- Contact -->
-                <div>
+                <div class="text-center md:text-left">
                     <h3 class="font-bold text-lg mb-5">
                         Let's Connect
                     </h3>
                     <p class="text-slate-400 mb-6">
                         itumelengnyathela16@gmail.com
                     </p>
-                    <div class="flex gap-4">
+                    <div class="flex justify-center md:justify-start gap-4">
                         <a href="https://github.com/ItumelengNyathela"
                         target="_blank"
                         class="w-14 h-14 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:scale-110 transition-all duration-300">
@@ -481,11 +573,11 @@
             <div class="h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent my-12"></div>
             <!-- Bottom -->
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-slate-500 text-sm text-center">
+                <p class="text-slate-500 text-sm text-center md:text-left">
                     © <span id="currentYear"></span> Itumeleng Ethan Nyathela. 
                     <br>Powered by coffee, Stack Overflow, and Ctrl+C Ctrl+V.
                 </p>
-                <div class="flex items-center gap-2 text-sm text-slate-500">
+                <div class="flex flex-wrap justify-center items-center gap-2 text-sm text-slate-500 text-center md:text-left">
                     <span>Built with</span>
                     <span class="text-blue-400">ASP.NET</span>
                     <span>•</span>

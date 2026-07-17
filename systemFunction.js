@@ -143,3 +143,41 @@ document.addEventListener("DOMContentLoaded", () => {
         yearElement.textContent = new Date().getFullYear();
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const menuIcon = document.getElementById("menuIcon");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    function closeMenu() {
+        mobileMenu.classList.add("hidden");
+        menuOverlay.classList.add("hidden");
+
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+    }
+
+    function openMenu() {
+        mobileMenu.classList.remove("hidden");
+        menuOverlay.classList.remove("hidden");
+
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-xmark");
+    }
+
+    menuToggle.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("hidden")) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    });
+
+    menuOverlay.addEventListener("click", closeMenu);
+
+    document.querySelectorAll(".mobile-link").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+});
