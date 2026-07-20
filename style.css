@@ -4,7 +4,7 @@ body {
     background-color: #f8f9fa; 
     color: #333; 
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
 }
 .hero { background: #0078d4; color: white; padding: 80px 0; border-bottom: 5px solid #005a9e; }
@@ -57,13 +57,16 @@ html.dark body {
     background-clip: content-box;
 }
 
+/* reCAPTCHA Layout Core Fixes */
 .g-recaptcha {
     display: inline-block;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 400px) {
     .g-recaptcha {
-        transform: scale(0.9);
-        transform-origin: center center;
+        /* Scale down to 78% on tiny phones (fits perfect on a 320px screen width) */
+        transform: scale(0.78);
+        /* Scale from the left edge so it stays within the form container padding boundaries */
+        transform-origin: left top;
     }
 }
